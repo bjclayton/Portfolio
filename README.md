@@ -15,13 +15,14 @@ Welcome to my personal portfolio! 🚀 Here, I showcase a collection of my works
 - Skills & Experience
 - Featured Projects
 - Contact Me
+- Blog
 
 ## Getting Started
 
 1. **Clone the Repository:**
 
    ```
-   git clone https://github.com/jcblanc2/Portfolio.git
+   https://github.com/jcblanc2/Portfolio.git
    ```
 
 2. **Install Dependencies:**
