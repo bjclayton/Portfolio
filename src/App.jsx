@@ -1,12 +1,16 @@
-import AnimatedPinCard from "./components/cards/AnimatedPinCard";
+import { Routes, Route } from "react-router-dom";
+import Main from "./pages/Main";
+import Blog from "./pages/Blog";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline text-green-900">
-        Hello world!
-      </h1>
-      <AnimatedPinCard />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </>
   )
 }
