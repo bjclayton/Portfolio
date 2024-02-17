@@ -9,16 +9,15 @@ export default {
   ],
   theme: {
     fontSize: {
-      // xs: ['12px', '16px'],
-      // sm: ['14px', '20px'],
-      // base: ['16px', '19.5px'],
-      // lg: ['18px', '21.94px'],
-      // xl: ['20px', '24.38px'],
-      // '2xl': ['24px', '29.26px'],
-      // '3xl': ['28px', '50px'],
-      // '4xl': ['48px', '58px'],
-      // '8xl': ['96px', '106px'],
-      // '7xl': '7rem',
+      sm: '0.8rem',
+      base: '1rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
+      '6xl': '4.052rem',
+      '7xl': '5.052rem',
     },
     extend: {
       fontFamily: {
@@ -26,6 +25,11 @@ export default {
         'lato': ['Lato', 'ui-sans-serif',],
       },
       colors: {
+        "dark-gray": "#111111",
+        "primary": "#0f172a",
+        "secondary": "#6366f1",
+        "primary-text": "#f1f5f9",
+        "secondary-text": "#808ea3"
       },
       screens: {
       },
@@ -37,6 +41,14 @@ export default {
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+        shimmer: {
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
           },
         },
       },
