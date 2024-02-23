@@ -28,6 +28,7 @@ export default {
         "dark-gray": "#111111",
         "primary": "#0f172a",
         "secondary": "#6366f1",
+        "third": "#21293b",
         "primary-text": "#f1f5f9",
         "secondary-text": "#808ea3"
       },

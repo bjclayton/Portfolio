@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { navigation } from '../../utils';
 import { Link } from 'react-router-dom';
+import { motion, useAnimation } from "framer-motion";
 
 const FixedNav = () => {
     const [state, setState] = useState(false)
+    const controls = useAnimation();
 
     useEffect(() => {
+        controls.start({ y: 0, opacity: 1, transition: { duration: 1 } });
+
         document.onclick = (e) => {
             const target = e.target;
             if (!target.closest(".menu-btn")) setState(false);
         };
-    }, [])
-
+    }, [controls])
 
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
             <Link to={'/'} className="flex gap-1 group">
-                <span className="font-bold text-[1.3rem] text-secondary group-hover:text-white transition-colors duration-500">JC</span>
-                <span className="w-2 h-2 rounded-full bg-primary-red group-hover:bg-secondary bg-white transition-colors duration-500"></span>
+                <span className="font-bold text-[1.3rem] text-white group-hover:text-secondary transition-colors duration-500">JC</span>
+                <span className="w-2 h-2 rounded-full bg-primary-red group-hover:bg-white bg-secondary transition-colors duration-500"></span>
             </Link>
 
             <div className="md:hidden">
@@ -41,10 +44,14 @@ const FixedNav = () => {
     )
 
     return (
-        <header>
-            <nav className={`pb-1 md:text-sm ${state ? "absolute z-20 top-0 inset-x-0 bg-primary rounded-xl mx-2 mt-2 md:mx-0 md:mt-0 md:relative md:bg-transparent" : ""}`}>
+        <motion.header
+            animate={controls}
+            initial={{ y: -100, opacity: 0 }}
+        >
+            <nav className={`pb-1 md:text-sm mx-auto md:px-48 ${state ? "absolute z-20 top-0 inset-x-0 bg-primary rounded-xl mx-2 mt-0 md:mx-0 md:mt-0 md:relative md:bg-transparent pb-4" : ""}`}>
                 <div className="gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
                     <Brand />
+
                     <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden'} `}>
                         <ul className="flex-1 justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
                             {
@@ -62,7 +69,7 @@ const FixedNav = () => {
                     </div>
                 </div>
             </nav>
-        </header>
+        </motion.header>
     )
 }
 

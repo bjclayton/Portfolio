@@ -6,6 +6,11 @@ import { Link } from "react-router-dom";
 import profile from "../../assets/images/profile.webp";
 import { useRef } from "react";
 import hover3d from "../../utils/hover";
+import { motion } from 'framer-motion';
+import { headlines } from '../../utils';
+import { SocialMediaIcons } from "../SocialMediaIcons";
+import AnimatedSubtitle from "../text anim/AnimatedSubtitle";
+import AnimatedTitle from "../text anim/AnimatedTitle";
 
 const Hero = () => {
     const hero = useRef(null);
@@ -30,46 +35,35 @@ const Hero = () => {
                 <div
                     className="relative z-10 max-w-screen-xl mx-auto px-4 py-28 md:px-8">
                     {/* Social Icon */}
-                    <div className="flex gap-8 max-w-4xl mx-auto">
-                        <FramerMagnetic>
-                            <Link
-                                to="https://www.linkedin.com/in/johnclaytonblanc">
-                                <FaLinkedin
-                                    className="fill-white hover:fill-secondary"
-                                    size={25} />
-                            </Link>
-                        </FramerMagnetic>
-
-                        <FramerMagnetic>
-                            <Link
-                                to="https://github.com/jcblanc2">
-                                <FaGithub
-                                    className="fill-white hover:fill-secondary"
-                                    size={25} />
-                            </Link>
-                        </FramerMagnetic>
-
-                        <FramerMagnetic>
-                            <FaInstagram className="fill-white hover:fill-secondary" size={25} />
-                        </FramerMagnetic>
-                    </div>
-
+                    <SocialMediaIcons />
 
                     {/* Info Div */}
                     <div className="space-y-2 max-w-4xl mx-auto">
                         <div className="flex justify-between">
                             <div>
-                                <h2
-                                    className="text-4xl font-extrabold mx-auto md:text-5xl text-primary-text">
-                                    Hi, I'm Clayton<span
-                                        className="text-secondary text-6xl">.</span>
-                                </h2>
-                                <h4 className="text-secondary-text text-3xl mx-auto font-bold">
-                                    I'm a <span className="text-secondary">Software Developer</span>
-                                </h4>
+                                <AnimatedTitle
+                                    text={headlines[0]}
+                                    className="text-4xl font-extrabold mx-auto md:text-5xl text-primary-text"
+                                    color={true} />
+
+                                <AnimatedSubtitle
+                                    text={headlines[1]}
+                                    className="text-secondary-text text-2xl md:text-3xl mx-auto font-bold break-words" />
                             </div>
 
-                            <div
+                            <motion.div
+                                initial={{
+                                    opacity: 0,
+                                    scale: 0
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    scale: 1,
+                                    transition: {
+                                        duration: 1
+                                    }
+                                }}
+                                className="hidden md:block"
                                 style={{
                                     transform: hoverHero.transform,
                                 }}>
@@ -81,12 +75,22 @@ const Hero = () => {
                                         transform: imageHover.transform,
                                     }}
                                 />
-                            </div>
+                            </motion.div>
                         </div>
 
-                        <p className="text-secondary-text text-xl pb-4">
-                            I've spent the last 5 years building and scaling software for some pretty cool companies. I also teach people to paint online (incase you've got an empty canvas layin' around 🎨). Let's connect!
-                        </p>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{
+                                opacity: 1,
+                                y: 0,
+                                transition: {
+                                    delay: 0.6,
+                                },
+                            }}
+                            className="text-secondary-text text-xl pb-4">
+                            {headlines[2]}
+                        </motion.p>
+
                         <CustomButton
                             label={'Contact Me'}
                             onClick={() => { }}
