@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fixedNavItems } from '../../utils';
-import { Link } from 'react-router-dom';
 import { motion, useAnimation } from "framer-motion";
+import { Link, animateScroll } from 'react-scroll';
 
 const FixedNavBar = () => {
     const [state, setState] = useState(false)
@@ -14,7 +14,11 @@ const FixedNavBar = () => {
             const target = e.target;
             if (!target.closest(".menu-btn")) setState(false);
         };
-    }, [controls])
+    }, [controls]);
+
+    const scrollToTop = () => {
+        animateScroll.scrollToTop();
+    };
 
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
@@ -55,11 +59,20 @@ const FixedNavBar = () => {
                     <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden'} `}>
                         <ul className="flex-1 justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
                             {
-                                fixedNavItems.map((item, idx) => {
+                                fixedNavItems.map((navItem, idx) => {
                                     return (
                                         <li key={idx} className="text-gray-300 transition-li hover:transform-li text-base">
-                                            <Link to={item.path} className="block">
-                                                {item.title}
+                                            <Link
+                                                to={
+                                                    navItem.name.toLocaleLowerCase()
+                                                }
+                                                smooth={true}
+                                                duration={500}
+                                                onClick={
+                                                    navItem.name === 'home' && scrollToTop
+                                                }
+                                                className="block">
+                                                {navItem.name}
                                             </Link>
                                         </li>
                                     )

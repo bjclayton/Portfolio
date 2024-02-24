@@ -12,11 +12,11 @@ export const headlines = [
 ];
 
 export const fixedNavItems = [
-    { title: "Home", path: "/" },
-    { title: "About", path: "#about" },
-    { title: "Projects", path: "#projects" },
-    { title: "Blog", path: "#blog" },
-    { title: "Contact", path: "#contact" }
+    { name: "Home" },
+    { name: "About" },
+    { name: "Projects" },
+    { name: "Blog" },
+    { name: "Contact" }
 ]
 
 export const projects = [

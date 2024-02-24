@@ -5,7 +5,7 @@ import Contact from "../components/sections/Contact";
 
 const Main = () => {
     return (
-        <main className="">
+        <main>
             <Hero />
             <About />
             <Projects />

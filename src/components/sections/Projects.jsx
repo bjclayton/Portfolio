@@ -5,7 +5,7 @@ import HorizontalWrapper from "../ui/HorizontalWrapper";
 
 const Projects = () => {
     return (
-        <section className="mt-5">
+        <section className="mt-5" id="projects">
             <div className="text-primary-text text-center pb-1">
                 <BumbyTextAnim text={"Projects."} className="text-4xl font-bold" />
                 <p className="text-secondary-text">Most recent works</p>

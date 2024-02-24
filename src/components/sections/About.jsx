@@ -7,7 +7,7 @@ import { TbBrandFunimation } from "react-icons/tb";
 
 const About = () => {
     return (
-        <section className="mt-5 max-w-4xl mx-auto md:px-8">
+        <section className="mt-5 max-w-4xl mx-auto md:px-8" id="about">
             <div className="text-primary-text text-center pb-10">
                 <BumbyTextAnim text={"About."} className="text-4xl font-bold" />
                 <p className="text-secondary-text">Skills & Journey</p>
@@ -33,7 +33,7 @@ const About = () => {
                     <StackSkills
                         title={"Use at work"}
                         list={techList}
-                        icon={<FaCode color="#6366f1"/>} />
+                        icon={<FaCode color="#6366f1" />} />
 
                     <StackSkills
                         title={"Use for fun"}

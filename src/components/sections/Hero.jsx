@@ -25,7 +25,7 @@ const Hero = () => {
     });
 
     return (
-        <div className="bg-primary bg-grid-small-white/[0.2]">
+        <div className="bg-primary bg-grid-small-white/[0.2]" id="home">
             <NavBar />
 
             <section ref={hero}>
