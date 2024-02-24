@@ -4,7 +4,7 @@ import Projects from "../components/sections/Projects";
 
 const Main = () => {
     return (
-        <main className="bg-grid-small-white/[0.2]">
+        <main className="">
             <Hero />
             <About />
         </main>

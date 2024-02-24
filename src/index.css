@@ -33,6 +33,13 @@ img{
         @apply text-secondary transform scale-110;
     }
 
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
     /* .nav-hover {
         @apply relative after:content-[''] after:absolute after:w-full after:transform after:scale-x-0 after:rounded-md after:h-[0.05em] after:bottom-0 after:left-0 after:bg-primary-red after:origin-bottom-right after:transition after:duration-300 after:ease-out hover:after:transform hover:after:scale-x-100 hover:after:origin-bottom-left;
     } */

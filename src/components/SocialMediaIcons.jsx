@@ -16,7 +16,7 @@ export const SocialMediaIcons = () => {
     }
 
     return (
-        <motion.div className="flex gap-8 max-w-4xl mx-auto pb-2">
+        <div className="flex gap-8 max-w-4xl mx-auto pb-2">
             {socialMediaLinks.map((link, index) => (
                 <motion.div
                     key={index}
@@ -31,7 +31,7 @@ export const SocialMediaIcons = () => {
                     </FramerMagnetic>
                 </motion.div>
             ))}
-        </motion.div>
+        </div>
     )
 }
 

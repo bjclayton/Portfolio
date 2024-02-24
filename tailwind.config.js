@@ -7,6 +7,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./src/**/*"
   ],
+
   theme: {
     fontSize: {
       sm: '0.8rem',
@@ -19,11 +20,13 @@ export default {
       '6xl': '4.052rem',
       '7xl': '5.052rem',
     },
+
     extend: {
       fontFamily: {
         'raleway': ['Raleway', '-apple-system',],
         'lato': ['Lato', 'ui-sans-serif',],
       },
+
       colors: {
         "dark-gray": "#111111",
         "primary": "#0f172a",
@@ -32,18 +35,22 @@ export default {
         "primary-text": "#f1f5f9",
         "secondary-text": "#808ea3"
       },
+
       screens: {
       },
+
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
+
       keyframes: {
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+
         shimmer: {
           from: {
             backgroundPosition: "0 0",
@@ -55,11 +62,13 @@ export default {
       },
     },
   },
+
   plugins: [
     require("@tailwindcss/aspect-ratio"),
     addVariablesForColors,
     backgroundSVG
   ],
+
   darkMode: 'class',
 }
 

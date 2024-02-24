@@ -68,3 +68,20 @@ export const projects = [
     }
 ];
 
+export const aboutMeText = [
+    "Hey! I'm Johm, if you haven't already gathered that by now. I'm a painter turned software engineer from Daytona, Florida. I specialize in the backend, primarily Node and Rust, but love building with whatever tools are right for the job.",
+
+    "I currently work for Google on Google Photos. I also toss in my ¢2 with the design systems teams from time to time (once an artist, always an artist, amirite?). Outside of work, I still love to paint. Any given Sunday I still love to paint. Any given Sunday I still love to paint. Any given Sunday ",
+];
+
+export const techList = [
+    'JavaScript',
+    'Python',
+    'Dart',
+    'Azure',
+    'Docker',
+    'Express',
+    'Tailwind',
+    'PostgreSQL',
+    'MySQL',
+];
