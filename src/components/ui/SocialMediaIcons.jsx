@@ -1,4 +1,4 @@
-import FramerMagnetic from "./FramerMagnetic";
+import FramerMagnetic from "../ui/FramerMagnetic";
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";

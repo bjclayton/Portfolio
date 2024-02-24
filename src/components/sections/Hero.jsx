@@ -1,14 +1,11 @@
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { CustomButton } from "../buttons/CustomButton";
 import FixedNav from "../navbar/FixedNav";
-import FramerMagnetic from "../FramerMagnetic";
-import { Link } from "react-router-dom";
 import profile from "../../assets/images/profile.webp";
 import { useRef } from "react";
 import hover3d from "../../utils/hover";
 import { motion } from 'framer-motion';
 import { headlines } from '../../utils';
-import { SocialMediaIcons } from "../SocialMediaIcons";
+import { SocialMediaIcons } from "../ui/SocialMediaIcons";
 import AnimatedSubtitle from "../text anim/AnimatedSubtitle";
 import AnimatedTitle from "../text anim/AnimatedTitle";
 
