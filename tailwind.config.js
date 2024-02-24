@@ -72,7 +72,6 @@ export default {
   darkMode: 'class',
 }
 
-
 // This plugin adds each Tailwind color as a global CSS variable
 function addVariablesForColors({ addBase, theme }) {
   let allColors = theme("colors");
@@ -86,7 +85,6 @@ function addVariablesForColors({ addBase, theme }) {
     ":root": newVars,
   });
 }
-
 
 function backgroundSVG({ matchUtilities, theme }) {
   matchUtilities(

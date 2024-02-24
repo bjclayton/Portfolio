@@ -2,12 +2,14 @@ import BumbyTextAnim from "../text anim/BumbyTextAnim";
 import { aboutMeText, techList } from "../../utils";
 import StackSkills from "../StackSkills";
 import { motion } from "framer-motion";
+import { FaCode } from "react-icons/fa6";
+import { TbBrandFunimation } from "react-icons/tb";
 
 const About = () => {
     return (
         <section className="mt-5 max-w-4xl mx-auto md:px-8">
             <div className="text-primary-text text-center pb-10">
-                <BumbyTextAnim text={"About Me."} className="text-4xl font-bold" />
+                <BumbyTextAnim text={"About."} className="text-4xl font-bold" />
                 <p className="text-secondary-text">Skills & Journey</p>
             </div>
 
@@ -28,8 +30,15 @@ const About = () => {
                 </div>
 
                 <div className="flex-1">
-                    <StackSkills title={"Use at work"} list={techList} />
-                    <StackSkills title={"Use for fun"} list={techList} />
+                    <StackSkills
+                        title={"Use at work"}
+                        list={techList}
+                        icon={<FaCode color="#6366f1"/>} />
+
+                    <StackSkills
+                        title={"Use for fun"}
+                        list={techList}
+                        icon={< TbBrandFunimation color="#6366f1" />} />
                 </div>
             </div>
         </section>
