@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { navigation } from '../../utils';
+import { fixedNavItems } from '../../utils';
 import { Link } from 'react-router-dom';
 import { motion, useAnimation } from "framer-motion";
 
-const FixedNav = () => {
+const FixedNavBar = () => {
     const [state, setState] = useState(false)
     const controls = useAnimation();
 
@@ -55,7 +55,7 @@ const FixedNav = () => {
                     <div className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? 'block' : 'hidden'} `}>
                         <ul className="flex-1 justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
                             {
-                                navigation.map((item, idx) => {
+                                fixedNavItems.map((item, idx) => {
                                     return (
                                         <li key={idx} className="text-gray-300 transition-li hover:transform-li text-base">
                                             <Link to={item.path} className="block">
@@ -73,4 +73,4 @@ const FixedNav = () => {
     )
 }
 
-export default FixedNav
+export default FixedNavBar

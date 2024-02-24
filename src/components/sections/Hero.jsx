@@ -1,5 +1,5 @@
 import { CustomButton } from "../buttons/CustomButton";
-import FixedNav from "../navbar/FixedNav";
+import NavBar from "../navbar/NavBar";
 import profile from "../../assets/images/profile.webp";
 import { useRef } from "react";
 import hover3d from "../../utils/hover";
@@ -26,7 +26,7 @@ const Hero = () => {
 
     return (
         <div className="bg-primary bg-grid-small-white/[0.2]">
-            <FixedNav />
+            <NavBar />
 
             <section ref={hero}>
                 <div

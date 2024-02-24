@@ -11,7 +11,7 @@ export const headlines = [
     "I've spent the last 5 years building and scaling software for some pretty cool companies. I also teach people to paint online (incase you've got an empty canvas layin' around 🎨). Let's connect!"
 ];
 
-export const navigation = [
+export const fixedNavItems = [
     { title: "Home", path: "/" },
     { title: "About", path: "#about" },
     { title: "Projects", path: "#projects" },
