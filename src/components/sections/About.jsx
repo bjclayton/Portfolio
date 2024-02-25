@@ -14,7 +14,7 @@ const About = () => {
             </div>
 
             <div className="text-secondary-text md:flex flex-row gap-16 px-4 md:px-0">
-                <div className="flex-1 text-xl">
+                <div className="flex-1 text-base">
                     {aboutMeText.map((item, idx) =>
                         <motion.p
                             initial={{ opacity: 0, y: 30 }}
@@ -29,7 +29,7 @@ const About = () => {
                     )}
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 pt-4 md:pt-0">
                     <StackSkills
                         title={"Use at work"}
                         list={techList}

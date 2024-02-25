@@ -37,7 +37,7 @@ const StackSkills = ({ title, icon, list }) => {
             <motion.h4
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0, transition: { duration: 0.7 } }}
-                className="text-2xl font-bold pb-3 text-primary-text flex gap-3 items-center">
+                className="text-xl font-bold pb-3 text-primary-text flex gap-3 items-center">
                 {icon} {title}
             </motion.h4>
 

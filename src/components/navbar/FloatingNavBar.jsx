@@ -8,8 +8,10 @@ import { IconHome, IconUser, IconArticle, IconPrompt } from "@tabler/icons-react
 import { Link, animateScroll } from 'react-scroll';
 
 export const FloatingNavBar = ({ className, visible }) => {
-    const scrollToTop = () => {
-        animateScroll.scrollToTop();
+    const scrollToTop = (navItem) => {
+        if (navItem.name === 'home') {
+            animateScroll.scrollToTop();
+        }
     };
 
     return (
@@ -39,7 +41,7 @@ export const FloatingNavBar = ({ className, visible }) => {
                         offset={-50}
                         activeClass="active"
                         onClick={
-                            navItem.name === 'home' && scrollToTop
+                            scrollToTop
                         }
                         key={`link=${idx}`}
                         className={`relative items-center flex space-x-1 text-neutral-600 transition-li hover:transform-li cursor-pointer ${className}`}

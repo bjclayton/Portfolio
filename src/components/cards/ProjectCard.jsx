@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
                 <CardItem
                     as="p"
                     translateZ="60"
-                    className="text-secondary-text text-xl max-w-sm mt-2"
+                    className="text-secondary-text text-base max-w-sm mt-2"
                 >
                     {project.description}
                 </CardItem>

@@ -16,10 +16,6 @@ const FixedNavBar = () => {
         };
     }, [controls]);
 
-    const scrollToTop = () => {
-        animateScroll.scrollToTop();
-    };
-
     const Brand = () => (
         <div className="flex items-center justify-between py-5 md:block">
             <Link to={'/'} className="flex gap-1 group">
@@ -68,9 +64,6 @@ const FixedNavBar = () => {
                                                 }
                                                 smooth={true}
                                                 duration={500}
-                                                onClick={
-                                                    navItem.name === 'home' && scrollToTop
-                                                }
                                                 className="block">
                                                 {navItem.name}
                                             </Link>
