@@ -1,6 +1,7 @@
 import FramerMagnetic from "../ui/FramerMagnetic";
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaMedium } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 export const SocialMediaIcons = () => {
@@ -45,7 +46,7 @@ const socialMediaLinks = [
         iconComponent: <FaGithub className="fill-white hover:fill-secondary" size={25} />
     },
     {
-        url: '',
-        iconComponent: <FaInstagram className="fill-white hover:fill-secondary" size={25} />
+        url: 'https://medium.com/@jclaytonblanc',
+        iconComponent: <FaMedium className="fill-white hover:fill-secondary" size={25} />
     },
 ];

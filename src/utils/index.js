@@ -25,7 +25,7 @@ export const projects = [
         image: cast,
         linkGithub: 'https://github.com/jcblanc2/SkyCast',
         linkOnline: 'https://sky-cast-taupe.vercel.app/',
-        description: 'A web app that provides weather conditions and forecasts for selected cities.',
+        description: 'SkyCast is a web app that provides real-time weather conditions and forecasts for selected cities.',
         techStack: ['React', 'Tailwind CSS', 'Firebase', 'Weather API']
     },
     {
@@ -33,7 +33,7 @@ export const projects = [
         image: chat,
         linkGithub: 'https://github.com/jcblanc2/ChatGenius',
         linkOnline: 'https://chat-genius-puce.vercel.app/',
-        description: 'ChatGenius is a web application that harnesses the power of Large Language Models (LLMs) to facilitate natural and engaging conversations.',
+        description: 'A web application that harnesses the power of Large Language Models (LLMs) to facilitate natural and engaging conversations.',
         techStack: ['React', 'Tailwind CSS', 'Firebase', 'Replicate', 'Llama2']
     },
     {
@@ -41,7 +41,7 @@ export const projects = [
         image: insta,
         linkGithub: 'https://github.com/jcblanc2/InstaWall',
         linkOnline: null,
-        description: 'A mobile application that allows users to discover, search, like, and share wallpapers from the Unsplash API.',
+        description: 'InstaWall is a mobile application that allows users to discover, search, like, and share wallpapers from the Unsplash API.',
         techStack: ['Dart', 'Flutter', 'Firebase']
     },
     {
@@ -57,7 +57,7 @@ export const projects = [
         image: tracer,
         linkGithub: 'https://github.com/jcblanc2/History-Tracer',
         linkOnline: null,
-        description: 'A desktop application that reads history data from different web browsers (Mozilla Firefox, Google Chrome, Microsoft Edge, and Opera) and displays it in a table.',
+        description: 'History Tracer is A desktop application that reads history data from different web browsers and displays it in a table.',
         techStack: ['Java Swing', 'SQLite JDBC']
     },
     {
@@ -65,7 +65,7 @@ export const projects = [
         image: ora,
         linkOnline: 'https://ora-api-documentation.vercel.app/',
         linkGithub: null,
-        description: 'ORA API is a RESTful API that provides access to a wide range of Bible-related information, including books, chapters, verses, versions, genres, and search functionality.',
+        description: 'A RESTful API that provides access to a wide range of Bible-related information, including versions, books, verses, and search functionality.',
         techStack: ['JavaScript', 'Express', 'Mongoose']
     }
 ];

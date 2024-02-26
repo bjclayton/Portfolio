@@ -2,7 +2,8 @@ import BumbyTextAnim from "../text anim/BumbyTextAnim";
 import { Link } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
 import { CustomButton } from "../buttons/CustomButton";
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaMedium } from "react-icons/fa6";
 import { sendEmail } from "../../services/email";
 import { useState } from "react";
 
@@ -138,10 +139,10 @@ const contactData = [
         path: "https://www.linkedin.com/in/johnclaytonblanc"
     },
     {
-        title: "Instagram",
-        icon: <FaInstagram size={24} />,
-        info: "@jclayton",
-        path: "https://www.linkedin.com/in/johnclaytonblanc"
+        title: "Medium",
+        icon: <FaMedium size={24} />,
+        info: "@jclaytonblanc",
+        path: "https://medium.com/@jclaytonblanc"
     },
 ];
 
