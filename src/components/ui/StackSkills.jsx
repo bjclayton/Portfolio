@@ -50,7 +50,7 @@ const StackSkills = ({ title, icon, list }) => {
                     <motion.div
                         variants={staggerVariants}
                         key={idx}
-                        className="py-1 text-base bg-third rounded-full text-primary-text text-center"
+                        className="py-1 text-base bg-third rounded-full text-secondary-text text-center"
                     >
                         {item}
                     </motion.div>

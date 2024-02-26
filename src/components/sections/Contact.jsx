@@ -1,4 +1,3 @@
-import BumbyTextAnim from "../text anim/BumbyTextAnim";
 import { Link } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
 import { CustomButton } from "../buttons/CustomButton";
@@ -6,6 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaMedium } from "react-icons/fa6";
 import { sendEmail } from "../../services/email";
 import { useState } from "react";
+import SectionHeader from "../ui/SectionHeader";
 
 const Contact = () => {
     const [sender, setSender] = useState('');
@@ -23,16 +23,13 @@ const Contact = () => {
 
     return (
         <section className="mt-5 max-w-4xl mx-auto md:px-8 pb-28" id="contact">
-            <div className="text-primary-text text-center pb-10">
-                <BumbyTextAnim text={"Contact."} className="text-4xl font-bold" />
-                <p className="text-secondary-text">Get in touch</p>
-            </div>
+            <SectionHeader title={"Contact."} subtitle={"Connect with Me"} />
 
             <div className="flex items-stretch justify-center">
                 <div className="grid md:grid-cols-2 px-5 md:px-0">
                     <div className="pr-6">
                         <p className="mt-3 mb-12 text-base text-secondary-text text-center md:text-left">
-                            Shoot me an email if you want to connect! You can also find me on Linkedin
+                            I'd be happy to connect! Feel free to reach out for project inquiries, collaboration opportunities, or any other questions you may have.
                         </p>
 
                         <ul className="mb-6 md:mb-0">

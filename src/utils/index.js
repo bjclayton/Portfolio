@@ -4,11 +4,15 @@ import cast from "../assets/images/cast.png";
 import insta from "../assets/images/insta.png";
 import tracer from "../assets/images/tracer.png";
 import pen from "../assets/images/pen.png";
+import a1 from "../assets/images/a1.webp";
+import a2 from "../assets/images/a2.webp";
+import a3 from "../assets/images/a3.webp";
+import a4 from "../assets/images/a4.webp";
 
 export const headlines = [
     "Hi, I'm Clayton.",
     "I'm a Software Developer",
-    "I've spent the last 5 years building and scaling software for some pretty cool companies. I also teach people to paint online (incase you've got an empty canvas layin' around 🎨). Let's connect!"
+    "Over the past few years, I've immersed myself in building and scaling backend software while actively tackling frontend challenges."
 ];
 
 export const fixedNavItems = [
@@ -29,12 +33,28 @@ export const projects = [
         techStack: ['React', 'Tailwind CSS', 'Firebase', 'Weather API']
     },
     {
+        title: 'ORA-API',
+        image: ora,
+        linkOnline: 'https://ora-api-documentation.vercel.app/',
+        linkGithub: null,
+        description: 'A RESTful API that provides access to a wide range of Bible-related information, including versions, books, verses, and search functionality.',
+        techStack: ['JavaScript', 'Express', 'Mongoose']
+    },
+    {
         title: 'ChatGenius',
         image: chat,
         linkGithub: 'https://github.com/jcblanc2/ChatGenius',
         linkOnline: 'https://chat-genius-puce.vercel.app/',
         description: 'A web application that harnesses the power of Large Language Models (LLMs) to facilitate natural and engaging conversations.',
         techStack: ['React', 'Tailwind CSS', 'Firebase', 'Replicate', 'Llama2']
+    },
+    {
+        title: 'History Tracer',
+        image: tracer,
+        linkGithub: 'https://github.com/jcblanc2/History-Tracer',
+        linkOnline: null,
+        description: 'History Tracer is A desktop application that reads history data from different web browsers and displays it in a table.',
+        techStack: ['Java Swing', 'SQLite JDBC']
     },
     {
         title: 'InstaWall',
@@ -52,38 +72,51 @@ export const projects = [
         description: 'A blog application built with React. It allows users to create and publish blog posts, as well as view and comment on other users\' posts.',
         techStack: ['MERN Stack', 'Tailwind CSS']
     },
+];
+
+export const skillsWork = [
+    'React',
+    'Python',
+    'Tailwind',
+    'NodeJS',
+    'Express',
+    'SQL',
+    'Docker',
+    'Azure',
+];
+
+export const skillsFun = [
+    'Framer Motion',
+    'P5.js',
+    'Figma',
+    'WordPress',
+];
+
+export const articles = [
     {
-        title: 'History Tracer',
-        image: tracer,
-        linkGithub: 'https://github.com/jcblanc2/History-Tracer',
-        linkOnline: null,
-        description: 'History Tracer is A desktop application that reads history data from different web browsers and displays it in a table.',
-        techStack: ['Java Swing', 'SQLite JDBC']
+        title: "LLaMA CPP and Python: The Easiest Way to Build Your Own ChatGPT",
+        resume: "Today, we hear a lot about large language models (LLMs) like GPT-3, GPT-4, PaLM, Gopher, etc. These models have shown their capacity to solve problems and generate text.",
+        url:
+            "https://medium.com/ai-mind-labs/llama-cpp-and-python-the-easiest-way-to-build-your-own-chatgpt-e473a9847878",
+        image: a1
     },
     {
-        title: 'ORA-API',
-        image: ora,
-        linkOnline: 'https://ora-api-documentation.vercel.app/',
-        linkGithub: null,
-        description: 'A RESTful API that provides access to a wide range of Bible-related information, including versions, books, verses, and search functionality.',
-        techStack: ['JavaScript', 'Express', 'Mongoose']
-    }
-];
-
-export const aboutMeText = [
-    "Hey! I'm Johm, if you haven't already gathered that by now. I'm a painter turned software engineer from Daytona, Florida. I specialize in the backend, primarily Node and Rust, but love building with whatever tools are right for the job.",
-
-    "I currently work for Google on Google Photos. I also toss in my ¢2 with the design systems teams from time to time (once an artist, always an artist, amirite?). Outside of work, I still love to paint. Any given Sunday I still love to paint. Any given Sunday I still love to paint. Any given Sunday ",
-];
-
-export const techList = [
-    'JavaScript',
-    'Python',
-    'Dart',
-    'Azure',
-    'Docker',
-    'Express',
-    'Tailwind',
-    'PostgreSQL',
-    'MySQL',
+        title: "Google Search vs Local PC Search",
+        resume: "Have you ever experienced the frustration of waiting for your computer to cough up search results while Google effortlessly delivers them in the blink of an eye? 😩 A simple Google search yields results in a mere 0.28 seconds...",
+        url: "https://medium.com/ai-mind-labs/google-search-vs-local-pc-search-902a6291e6ce",
+        image: a4
+    },
+    {
+        title: "Attention Is All You Need",
+        resume: "Did you know the next best-selling author on Amazon might not be human? Language models like Transformers, BERT, GPT, and T5 are rapidly evolving, pushing the boundaries of what machines can do with language.",
+        url: "https://medium.com/ai-mind-labs/attention-is-all-you-need-ae2d216d7f17",
+        image: a3
+    },
+    {
+        title: "The JavaScript Universe: Imperfections and Essential Insights",
+        resume: "In the ever-evolving world of web development, JavaScript reigns supreme. From crafting dynamic, interactive websites to powering complex server-side applications, its versatility knows no bounds.",
+        url:
+            "https://pub.aimind.so/the-javascript-universe-imperfections-and-essential-insights-fc9be3e65af4",
+        image: a2
+    },
 ];
