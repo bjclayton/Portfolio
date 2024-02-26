@@ -7,7 +7,8 @@ Welcome to my personal portfolio! 🚀 Here, I showcase a collection of my works
 - React
 - Tailwind CSS
 - Framer Motion
-- Spline
+- Aceternity
+- Resend
 
 ## Features
 
