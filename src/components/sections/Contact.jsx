@@ -1,11 +1,25 @@
 import BumbyTextAnim from "../text anim/BumbyTextAnim";
 import { Link } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
-import { BackgroundBoxes } from "../ui/BackgroundBoxes";
 import { CustomButton } from "../buttons/CustomButton";
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { sendEmail } from "../../services/email";
+import { useState } from "react";
 
 const Contact = () => {
+    const [sender, setSender] = useState('');
+    const [subject, setSubject] = useState('');
+    const [body, setBody] = useState('');
+
+    const handleSendMessage = (event) => {
+        event.preventDefault();
+        sendEmail(sender, subject, body);
+
+        setSender('');
+        setSubject('');
+        setBody('');
+    }
+
     return (
         <section className="mt-5 max-w-4xl mx-auto md:px-8 pb-28" id="contact">
             <div className="text-primary-text text-center pb-10">
@@ -54,7 +68,10 @@ const Contact = () => {
                             <input
                                 type="email"
                                 id="email"
-                                className="shadow-sm bg-third border border-third text-primary-text text-base rounded-lg focus:ring-primary-500 block w-full p-2.5 placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary" placeholder="email here" required />
+                                className="shadow-sm bg-third border border-third text-primary-text text-base rounded-lg focus:ring-primary-500 block w-full p-2.5 placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary" placeholder="email here"
+                                required
+                                value={sender}
+                                onChange={(e) => setSender(e.target.value)} />
                         </div>
 
                         {/* Subject Input */}
@@ -69,7 +86,11 @@ const Contact = () => {
                             <input
                                 type="text"
                                 id="subject"
-                                className="block p-3 w-full text-base text-primary-text bg-third rounded-lg border border-third shadow-sm placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary" placeholder="subject here" required />
+                                className="block p-3 w-full text-base text-primary-text bg-third rounded-lg border border-third shadow-sm placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary"
+                                placeholder="subject here"
+                                required
+                                value={subject}
+                                onChange={(e) => setSubject(e.target.value)} />
                         </div>
 
                         {/* Message Input */}
@@ -84,13 +105,17 @@ const Contact = () => {
                             <textarea
                                 id="message"
                                 rows="6"
-                                className="block p-2.5 w-full text-base text-primary-text bg-third rounded-lg shadow-sm border border-third placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary" placeholder="your message...">
+                                className="block p-2.5 w-full text-base text-primary-text bg-third rounded-lg shadow-sm border border-third placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary"
+                                placeholder="your message..."
+                                required
+                                value={body}
+                                onChange={(e) => setBody(e.target.value)} >
                             </textarea>
                         </div>
 
                         <CustomButton
                             label={'Send message'}
-                            onClick={() => { }}
+                            onClick={handleSendMessage}
                         />
                     </form>
                 </div>

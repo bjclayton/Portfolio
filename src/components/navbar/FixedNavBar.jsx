@@ -64,7 +64,10 @@ const FixedNavBar = () => {
                                                 }
                                                 smooth={true}
                                                 duration={500}
-                                                className="block">
+                                                spy={true}
+                                                offset={-50}
+                                                activeClass="active"
+                                                className="block cursor-pointer">
                                                 {navItem.name}
                                             </Link>
                                         </li>

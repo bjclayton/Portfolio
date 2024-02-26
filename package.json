@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@splinetool/react-spline": "^2.2.6",
     "@tabler/icons-react": "^2.47.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "framer-motion": "^11.0.5",

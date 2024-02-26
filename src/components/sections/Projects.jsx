@@ -1,7 +1,6 @@
 import ProjectCard from "../cards/ProjectCard";
 import { projects } from "../../utils";
 import BumbyTextAnim from "../text anim/BumbyTextAnim";
-import HorizontalWrapper from "../ui/HorizontalWrapper";
 
 const Projects = () => {
     return (
