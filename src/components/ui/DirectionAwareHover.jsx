@@ -51,7 +51,7 @@ export const DirectionAwareHover = ({
         <motion.div
             onMouseEnter={handleMouseEnter}
             ref={ref}
-            className={`md:h-96 w-60 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative ${className}`}
+            className={`md:h-96 w-80 h-60 md:w-96 bg-transparent rounded-lg overflow-hidden group/card relative ${className}`}
         >
             <AnimatePresence mode="wait">
                 <motion.div
@@ -72,8 +72,8 @@ export const DirectionAwareHover = ({
                         <img
                             alt="image"
                             className={`h-full w-full object-cover scale-[1.15] ${imageClassName}`}
-                            width="1000"
-                            height="1000"
+                            width="100"
+                            height="100"
                             src={imageUrl}
                         />
                     </motion.div>

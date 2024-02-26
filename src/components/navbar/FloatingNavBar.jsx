@@ -70,25 +70,25 @@ const floatingNavItems = [
     {
         name: "Home",
         icon: (
-            <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />
+            <IconHome className="h-4 w-4 fill-white hover:fill-secondary" activeclass="active" />
         ),
     },
     {
         name: "About",
         icon: (
-            <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />
+            <IconUser className="h-4 w-4 fill-white hover:fill-secondary" activeclass="active" />
         ),
     },
     {
         name: "Projects",
         icon: (
-            <IconPrompt className="h-4 w-4 text-neutral-500 dark:text-white" />
+            <IconPrompt className="h-4 w-4 fill-white hover:fill-secondary" activeclass="active" />
         ),
     },
     {
         name: "Blog",
         icon: (
-            <IconArticle className="h-4 w-4 text-neutral-500 dark:text-white" />
+            <IconArticle className="h-4 w-4 fill-white hover:fill-secondary" activeclass="active" />
         ),
     },
 ];

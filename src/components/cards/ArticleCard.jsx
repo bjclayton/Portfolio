@@ -1,8 +1,26 @@
+import { useRef } from "react";
 import { DirectionAwareHover } from "../ui/DirectionAwareHover";
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const ArticleCard = ({ article }) => {
+    const ref = useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["0 1", "1.33 1"]
+    });
+
+    const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+    const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
     return (
-        <div className="relative flex flex-col mt-6 text-primary-text bg-third shadow-md bg-clip-border rounded-xl w-80 md:w-[21rem] lg:w-[25rem] mb-3">
+        <motion.div
+            ref={ref}
+            style={{
+                scale: scaleProgress,
+                opacity: opacityProgress
+            }}
+            className="relative flex flex-col mt-2 text-primary-text bg-third shadow-md bg-clip-border rounded-xl sm-80 md:w-[21rem] lg:w-[25rem] mb-3">
             <div
                 className="relative h-56 mx-4 -mt-6 overflow-hidden shadow-lg bg-clip-border rounded-xl shadow-blue-gray-500/40">
                 <DirectionAwareHover imageUrl={article.image} />
@@ -22,7 +40,7 @@ const ArticleCard = ({ article }) => {
                     Read More
                 </a>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

@@ -75,19 +75,21 @@ export const projects = [
 ];
 
 export const skillsWork = [
-    'React',
-    'Python',
-    'Tailwind',
     'NodeJS',
     'Express',
+    'Python',
     'SQL',
     'Docker',
+    'Unit Testing',
     'Azure',
+    'React',
+    'Tailwind CSS',
 ];
 
 export const skillsFun = [
     'Framer Motion',
     'P5.js',
+    'Flet',
     'Figma',
     'WordPress',
 ];

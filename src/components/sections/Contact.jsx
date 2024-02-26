@@ -4,13 +4,33 @@ import { CustomButton } from "../buttons/CustomButton";
 import { FaLinkedin } from "react-icons/fa";
 import { FaMedium } from "react-icons/fa6";
 import { sendEmail } from "../../services/email";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SectionHeader from "../ui/SectionHeader";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 const Contact = () => {
     const [sender, setSender] = useState('');
     const [subject, setSubject] = useState('');
     const [body, setBody] = useState('');
+
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+
+    const containerVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1, y: 0, transition: { duration: 0.8 }
+        },
+    };
+
+    useEffect(() => {
+        if (inView) {
+            control.start("visible");
+        } else {
+            control.start("hidden");
+        }
+    }, [control, inView]);
 
     const handleSendMessage = (event) => {
         event.preventDefault();
@@ -25,8 +45,12 @@ const Contact = () => {
         <section className="mt-5 max-w-4xl mx-auto md:px-8 pb-28" id="contact">
             <SectionHeader title={"Contact."} subtitle={"Connect with Me"} />
 
-            <div className="flex items-stretch justify-center">
-                <div className="grid md:grid-cols-2 px-5 md:px-0">
+            <div className="flex items-stretch justify-center" ref={ref}>
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={control}
+                    className="grid md:grid-cols-2 px-5 md:px-0">
                     <div className="pr-6">
                         <p className="mt-3 mb-12 text-base text-secondary-text text-center md:text-left">
                             I'd be happy to connect! Feel free to reach out for project inquiries, collaboration opportunities, or any other questions you may have.
@@ -116,7 +140,7 @@ const Contact = () => {
                             onClick={handleSendMessage}
                         />
                     </form>
-                </div>
+                </motion.div>
             </div>
         </section>
     )

@@ -1,25 +1,43 @@
 import cors from 'cors';
 import express, { json } from 'express';
-import { Resend } from 'resend';
 import 'dotenv/config';
+import nodemailer from 'nodemailer';
 
 const app = express();
-const resend = new Resend("re_9Gi1C4RA_JYf5cBoqsdx96TYViUrYAYGv");
 
 app.use(cors());
 app.use(json());
 
+const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+        user: process.env.MAIL_USERNAME,
+        pass: process.env.MAIL_PASSWORD,
+    },
+});
+
+
 app.use("/api/send-message", async (req, res) => {
     const { sender, subject, body } = req.body;
 
-    await resend.emails.send({
-        from: 'portfolio-contact.com',
-        to: 'jclaytonblanc@gmail.com',
+    let mailOptions = {
+        from: sender,
+        to: "jclaytonblanc@gmail.com",
         subject: subject,
-        html: `<p${sender} <br/> ${body}</p>`
+        text: body
+    };
+
+    transporter.sendMail(mailOptions, function (err, data) {
+        if (err) {
+            console.log("Error " + err);
+            res.json({ message: "Error!" });
+        }
     });
 
-    res.json({ message: "Success!" });
+    res.json({ message: "Message sent successfully." });
 });
 
 app.listen(3000, () => {

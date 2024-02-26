@@ -1,17 +1,18 @@
 import SectionHeader from "../ui/SectionHeader";
 import { articles } from "../../utils";
 import ArticleCard from "../cards/ArticleCard";
-import { CustomButton } from "../buttons/CustomButton";
 
 const Blog = () => {
     return (
         <section className="mt-5 max-w-4xl mx-auto md:px-8" id="blog">
             <SectionHeader title={"Blog."} subtitle={"Tech Trends & Reflections"} />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 px-7 md:px-0 gap-5">
-                {articles.map((article, idx) => (
-                    <ArticleCard article={article} key={idx} />
-                ))}
+            <div className="flex justify-center items-center mt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 px-7 md:px-0 gap-5">
+                    {articles.map((article, idx) => (
+                        <ArticleCard article={article} key={idx} />
+                    ))}
+                </div>
             </div>
 
             <div className="p-6 pt-0 text-center mt-10">
