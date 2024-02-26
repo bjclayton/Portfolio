@@ -8,11 +8,13 @@ import { useState, useEffect } from "react";
 import SectionHeader from "../ui/SectionHeader";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
+import Toast from "../ui/Toast";
 
 const Contact = () => {
     const [sender, setSender] = useState('');
     const [subject, setSubject] = useState('');
     const [body, setBody] = useState('');
+    const [alert, setAlert] = useState('');
 
     const control = useAnimation();
     const [ref, inView] = useInView();
@@ -32,18 +34,27 @@ const Contact = () => {
         }
     }, [control, inView]);
 
-    const handleSendMessage = (event) => {
+    const handleSendMessage = async (event) => {
         event.preventDefault();
-        sendEmail(sender, subject, body);
+        const response = await sendEmail(sender, subject, body);
 
+        setAlert(response);
         setSender('');
         setSubject('');
         setBody('');
+
+        setTimeout(() => {
+            setAlert('');
+        }, 2000);
     }
 
     return (
         <section className="mt-5 max-w-4xl mx-auto md:px-8 pb-28" id="contact">
             <SectionHeader title={"Contact."} subtitle={"Connect with Me"} />
+
+            <div className="flex justify-center items-center">
+                <Toast message={alert} />
+            </div>
 
             <div className="flex items-stretch justify-center" ref={ref}>
                 <motion.div

@@ -1,6 +1,6 @@
 export const sendEmail = async (sender, subject, body) => {
     try {
-        const response = await fetch('http://localhost:3000/api/send-message', {
+        const response = await fetch('https://portfolio-production-2700.up.railway.app/api/send-message', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

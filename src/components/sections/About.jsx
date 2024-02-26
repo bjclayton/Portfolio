@@ -56,13 +56,13 @@ const About = () => {
                     </p>
 
                     <p className="pb-3">
-                        Outside of the world of code, I'm the guy who enjoys playing football and piano. Every Sunday morning, you'll find me at <a
+                        Outside of the world of code, I'm the guy who enjoys playing football and piano. Each Sunday morning, you can find me at <a
                             href="https://www.calvarypap.org/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-secondary hover:underline"
                         >Calvary Chapel Port-au-Prince
-                        </a> expressing gratitude for everything God has done and will do.
+                        </a>, expressing gratitude to God.
                     </p>
 
                     <p className="pb-3">

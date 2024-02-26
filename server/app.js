@@ -5,7 +5,12 @@ import nodemailer from 'nodemailer';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    credentials: true, origin: [
+        "http://localhost:5173",
+        "https://johnclayton.vercel.app"
+    ]
+}));
 app.use(json());
 
 const transporter = nodemailer.createTransport({
