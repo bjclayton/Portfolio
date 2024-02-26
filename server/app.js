@@ -6,7 +6,7 @@ import nodemailer from 'nodemailer';
 const app = express();
 
 app.use(cors({
-    credentials: true, origin: [
+    origin: [
         "http://localhost:5173",
         "https://johnclayton.vercel.app"
     ]

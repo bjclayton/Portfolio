@@ -45,16 +45,12 @@ const Contact = () => {
 
         setTimeout(() => {
             setAlert('');
-        }, 2000);
+        }, 3000);
     }
 
     return (
         <section className="mt-5 max-w-4xl mx-auto md:px-8 pb-28" id="contact">
             <SectionHeader title={"Contact."} subtitle={"Connect with Me"} />
-
-            <div className="flex justify-center items-center">
-                <Toast message={alert} />
-            </div>
 
             <div className="flex items-stretch justify-center" ref={ref}>
                 <motion.div
@@ -87,6 +83,9 @@ const Contact = () => {
                                 </Link>
                             )}
                         </ul>
+                        <div className="flex items-center">
+                            <Toast message={alert} />
+                        </div>
                     </div>
 
                     <form className="space-y-8">

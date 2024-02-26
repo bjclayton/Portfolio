@@ -1,6 +1,6 @@
 export const sendEmail = async (sender, subject, body) => {
     try {
-        const response = await fetch('https://portfolio-production-2700.up.railway.app/api/send-message', {
+        const response = await fetch('https://portfolioapi-2a97.onrender.com/api/send-message', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
