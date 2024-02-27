@@ -11,13 +11,19 @@ import { motion, useAnimation } from "framer-motion";
 import Toast from "../ui/Toast";
 
 const Contact = () => {
-    const [sender, setSender] = useState('');
-    const [subject, setSubject] = useState('');
-    const [body, setBody] = useState('');
     const [alert, setAlert] = useState('');
-
     const control = useAnimation();
     const [ref, inView] = useInView();
+    const [formData, setFormData] = useState({
+        email: '',
+        subject: '',
+        message: '',
+    });
+
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const containerVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -36,12 +42,10 @@ const Contact = () => {
 
     const handleSendMessage = async (event) => {
         event.preventDefault();
-        const response = await sendEmail(sender, subject, body);
+        const response = await sendEmail(formData);
 
         setAlert(response);
-        setSender('');
-        setSubject('');
-        setBody('');
+        setFormData({ email: '', subject: '', message: '' });
 
         setTimeout(() => {
             setAlert('');
@@ -100,10 +104,11 @@ const Contact = () => {
                             <input
                                 type="email"
                                 id="email"
+                                name="email"
                                 className="shadow-sm bg-third border border-third text-primary-text text-base rounded-lg focus:ring-primary-500 block w-full p-2.5 placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary" placeholder="email here"
                                 required
-                                value={sender}
-                                onChange={(e) => setSender(e.target.value)} />
+                                value={formData.email}
+                                onChange={handleChange} />
                         </div>
 
                         {/* Subject Input */}
@@ -118,11 +123,12 @@ const Contact = () => {
                             <input
                                 type="text"
                                 id="subject"
+                                name="subject"
                                 className="block p-3 w-full text-base text-primary-text bg-third rounded-lg border border-third shadow-sm placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary"
                                 placeholder="subject here"
                                 required
-                                value={subject}
-                                onChange={(e) => setSubject(e.target.value)} />
+                                value={formData.subject}
+                                onChange={handleChange} />
                         </div>
 
                         {/* Message Input */}
@@ -136,12 +142,13 @@ const Contact = () => {
 
                             <textarea
                                 id="message"
+                                name="message"
                                 rows="6"
                                 className="block p-2.5 w-full text-base text-primary-text bg-third rounded-lg shadow-sm border border-third placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary"
                                 placeholder="your message..."
                                 required
-                                value={body}
-                                onChange={(e) => setBody(e.target.value)} >
+                                value={formData.message}
+                                onChange={handleChange} >
                             </textarea>
                         </div>
 

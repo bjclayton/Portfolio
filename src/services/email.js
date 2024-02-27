@@ -1,11 +1,11 @@
-export const sendEmail = async (sender, subject, body) => {
+export const sendEmail = async (formData) => {
     try {
-        const response = await fetch('https://portfolioapi-2a97.onrender.com/api/send-message', {
+        const response = await fetch('https://portfolioapi-2a97.onrender.com/send-email', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ sender: sender, subject: subject, body: body })
+            body: JSON.stringify({ formData: formData })
         });
 
         const responseData = await response.json();

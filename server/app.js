@@ -25,14 +25,14 @@ const transporter = nodemailer.createTransport({
 });
 
 
-app.use("/api/send-message", async (req, res) => {
-    const { sender, subject, body } = req.body;
-
+app.use("/send-email", async (req, res) => {
+    const { formData } = req.body;
+    
     let mailOptions = {
-        from: sender,
+        from: formData.email,
         to: "jclaytonblanc@gmail.com",
-        subject: subject,
-        text: body
+        subject: `Portfolio: ${formData.subject}`,
+        text: `Sender's Email: ${formData.email}\n\n${formData.message}`
     };
 
     transporter.sendMail(mailOptions, function (err, data) {
@@ -45,6 +45,6 @@ app.use("/api/send-message", async (req, res) => {
     res.json({ message: "Message sent successfully." });
 });
 
-app.listen(3000, () => {
-    console.log("http://localhost:3000");
+app.listen(5000, () => {
+    console.log("http://localhost:5000");
 });
