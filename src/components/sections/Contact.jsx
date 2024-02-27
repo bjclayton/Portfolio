@@ -42,6 +42,15 @@ const Contact = () => {
 
     const handleSendMessage = async (event) => {
         event.preventDefault();
+
+        if (!formData.email || !formData.subject || !formData.message) {
+            setAlert('Please fill in all fields.');
+            setTimeout(() => {
+                setAlert('');
+            }, 3000);
+            return;
+        }
+
         const response = await sendEmail(formData);
 
         setAlert(response);
@@ -92,7 +101,7 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <form className="space-y-8">
+                    <form className="space-y-8" noValidate>
                         {/* Input Email */}
                         <div>
                             <label
@@ -146,9 +155,9 @@ const Contact = () => {
                                 rows="6"
                                 className="block p-2.5 w-full text-base text-primary-text bg-third rounded-lg shadow-sm border border-third placeholder-secondary-text focus:outline-none focus:right-2 focus:border-secondary"
                                 placeholder="your message..."
-                                required
                                 value={formData.message}
-                                onChange={handleChange} >
+                                onChange={handleChange}
+                                required >
                             </textarea>
                         </div>
 

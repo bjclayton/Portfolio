@@ -27,22 +27,28 @@ const transporter = nodemailer.createTransport({
 
 app.use("/send-email", async (req, res) => {
     const { formData } = req.body;
-    
-    let mailOptions = {
-        from: formData.email,
-        to: "jclaytonblanc@gmail.com",
-        subject: `Portfolio: ${formData.subject}`,
-        text: `Sender's Email: ${formData.email}\n\n${formData.message}`
-    };
 
-    transporter.sendMail(mailOptions, function (err, data) {
-        if (err) {
-            console.log("Error " + err);
-            res.json({ message: "Error!" });
-        }
-    });
+    try {
+        let mailOptions = {
+            from: formData.email,
+            to: "jclaytonblanc@gmail.com",
+            subject: `Portfolio: ${formData.subject}`,
+            text: `Sender's Email: ${formData.email}\n\n${formData.message}`
+        };
 
-    res.json({ message: "Message sent successfully." });
+        transporter.sendMail(mailOptions, function (err, data) {
+            if (err) {
+                console.log('Error send message:', err);
+                return res.json({ message: "Internal server error!" });
+            }
+        });
+
+        res.json({ message: "Message sent successfully." });
+
+    } catch (error) {
+        console.error('Error send message:', error);
+        res.status(500).json({ message: "Internal server error!" });
+    }
 });
 
 app.listen(5000, () => {
