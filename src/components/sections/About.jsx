@@ -6,6 +6,10 @@ import SectionHeader from "../ui/SectionHeader";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import Tooltip from "../ui/Tooltip";
+import transition from "../../assets/images/transition.png";
+import zoomer from "../../assets/images/zoomer.png";
+import ccpap from "../../assets/images/ccpap.png";
 
 const About = () => {
     const control = useAnimation();
@@ -40,34 +44,38 @@ const About = () => {
                         Hey there! I'm John Clayton, a Christian software developer based in Haiti. I specialize in backend development, particularly using Node.js, but I'm also comfortable with various tools and adapt to project needs. I also have experience in frontend development.
                     </p>
 
-                    <p className="pb-3">
-                        Currently, I work passively for <a
-                            href="https://transitiondigitale.tech/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-secondary hover:underline">Transition Digitale
-                        </a> and contribute to the <span className="text-secondary">Predika</span> project at
+                    <div className="pb-3">
+                        Currently, I work passively for{' '}
+                        <Tooltip
+                            name={'Transition Digitale'}
+                            path={'https://transitiondigitale.tech/'}
+                            image={transition}
+                        />{' '}
 
-                        <a
-                            href="https://zoomerdigital.tech/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-secondary hover:underline"> Zoomer Digital</a>.
-                    </p>
+                        and contribute to the
+                        <span className="text-secondary"> Predika </span>
+                        project at{' '}
 
-                    <p className="pb-3">
-                        Outside of the world of code, I'm the guy who enjoys playing football and piano. Each Sunday morning, you can find me at <a
-                            href="https://www.calvarypap.org/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-secondary hover:underline"
-                        >Calvary Chapel Port-au-Prince
-                        </a>, expressing gratitude to God.
-                    </p>
+                        <Tooltip
+                            name={'Zoomer Digital'}
+                            path={'https://zoomerdigital.tech/'}
+                            image={zoomer}
+                        />
+                    </div>
 
-                    <p className="pb-3">
+                    <div className="pb-3">
+                        Outside of the world of code, I'm the guy who enjoys playing football and piano. Each Sunday morning, you can find me at{' '}
+                        <Tooltip
+                            name={'Calvary Chapel Port-au-Prince'}
+                            path={'https://www.calvarypap.org/'}
+                            image={ccpap}
+                        />
+                        , expressing gratitude to God.
+                    </div>
+
+                    <div className="pb-3">
                         I'm looking for new opportunities where I can merge my love for code with my love for learning to solve challenging problems. If you have an opening that you think might be a good fit, let's connect and explore the possibilities!
-                    </p>
+                    </div>
                 </motion.div>
 
                 <div className="flex-1 pt-4 md:pt-0">
