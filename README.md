@@ -1,22 +1,19 @@
 # Portfolio
 
-Welcome to my personal portfolio! 🚀 Here, I showcase a collection of my works and give an overview of my skills and creativity. Feel free to explore and get to know me better.
+Welcome to my portfolio! 🚀 Here, I showcase a collection of my works and give an overview of my skills and creativity. Feel free to explore and get to know me better.
 
-## Technologies Used
+## Tech Stack
 
-- React
-- Tailwind CSS
-- Framer Motion
-- Aceternity
-- Express
+- **Client:** React, Tailwind CSS, Framer Motion, Aceternity UI
+- **Server:** Node, Express
 
 ## Features
 
-- About Me
-- Skills & Experience
-- Featured Projects
-- Contact Me
+- Home
+- About Me & Skills
+- Projects
 - Blog
+- Contact Me
 
 ## Getting Started
 
