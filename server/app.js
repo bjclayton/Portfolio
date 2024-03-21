@@ -68,9 +68,13 @@ app.use("/generate-token", async (req, res) => {
         });
 
         if (response.status > 400) {
-            return res.status(500).json({ message: "Unable to Fetch Song" });
+            return res.status(500).json({
+                response: { message: "Unable to Fetch Song", code: 500 }
+            });
         } else if (response.status === 204) {
-            return res.status(500).json({ message: "Currently Not Playing" });
+            return res.status(500).json({
+                response: { message: "Currently Not Playing", code: 204 }
+            });
         }
 
         const song = await response.json();
@@ -91,14 +95,17 @@ app.use("/generate-token", async (req, res) => {
             title: title,
             timePlayed: timePlayed,
             timeTotal: timeTotal,
-            artistUrl: artistUrl
+            artistUrl: artistUrl,
+            code: 200
         };
 
         res.status(200).json({ response: responseData });
 
     } catch (error) {
         console.log('Error fetching currently playing song');
-        res.status(500).json({ message: "Internal server error!" });
+        res.status(500).json({
+            response: { message: "Internal server error!", code: 500 }
+        });
     }
 });
 

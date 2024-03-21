@@ -3,6 +3,7 @@ import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
 import Contact from "../components/sections/Contact";
 import Blog from "../components/sections/Blog";
+import Footer from "../components/sections/Footer";
 
 const Main = () => {
     return (
@@ -12,6 +13,7 @@ const Main = () => {
             <Projects />
             <Blog />
             <Contact />
+            <Footer />
         </main>
     )
 }

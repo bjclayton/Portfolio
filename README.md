@@ -5,7 +5,7 @@ Welcome to my portfolio! 🚀 Here, I showcase a collection of my works and give
 ## Tech Stack
 
 - **Client:** React, Tailwind CSS, Framer Motion, Aceternity UI
-- **Server:** Node, Express
+- **Server:** Node, Express, Nodemailer, Spotify API
 
 ## Features
 
