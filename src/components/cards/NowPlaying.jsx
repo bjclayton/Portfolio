@@ -46,7 +46,7 @@ const NowPlaying = () => {
         artist = nowPlaying.artist
     } else if (nowPlaying !== null && nowPlaying.code === 204) {
         playerState = 'OFFLINE'
-        title = 'User is'
+        title = 'I am'
         artist = 'currently Offline'
     } else {
         title = 'Failed to'
