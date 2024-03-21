@@ -2,6 +2,7 @@ import cors from 'cors';
 import express, { json } from 'express';
 import 'dotenv/config';
 import nodemailer from 'nodemailer';
+import { getAccessToken } from './spotify.js';
 
 const app = express();
 
@@ -50,6 +51,57 @@ app.use("/send-email", async (req, res) => {
         res.status(500).json({ message: "Internal server error!" });
     }
 });
+
+
+app.use("/generate-token", async (req, res) => {
+    try {
+        const { access_token } = await getAccessToken(
+            process.env.CLIENT_ID,
+            process.env.CLIENT_SECRET,
+            process.env.REFRESH_TOKEN
+        );
+
+        const response = await fetch(process.env.NOW_PLAYING_ENDPOINT, {
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+            },
+        });
+
+        if (response.status > 400) {
+            return res.status(500).json({ message: "Unable to Fetch Song" });
+        } else if (response.status === 204) {
+            return res.status(500).json({ message: "Currently Not Playing" });
+        }
+
+        const song = await response.json();
+        const albumImageUrl = song.item.album.images[0].url;
+        const artist = song.item.artists.map((artist) => artist.name).join(', ');
+        const isPlaying = song.is_playing;
+        const songUrl = song.item.external_urls.spotify;
+        const title = song.item.name;
+        const timePlayed = song.progress_ms;
+        const timeTotal = song.item.duration_ms;
+        const artistUrl = song.item.album.artists[0].external_urls.spotify;
+
+        const responseData = {
+            albumImageUrl: albumImageUrl,
+            artist: artist,
+            isPlaying: isPlaying,
+            songUrl: songUrl,
+            title: title,
+            timePlayed: timePlayed,
+            timeTotal: timeTotal,
+            artistUrl: artistUrl
+        };
+
+        res.status(200).json({ response: responseData });
+
+    } catch (error) {
+        console.log('Error fetching currently playing song');
+        res.status(500).json({ message: "Internal server error!" });
+    }
+});
+
 
 app.listen(5000, () => {
     console.log("http://localhost:5000");
