@@ -78,7 +78,7 @@ export const skillsWork = [
     'NodeJS',
     'Express',
     'Python',
-    'SQL',
+    'PostgreSQL',
     'Docker',
     'Unit Testing',
     'Azure',
