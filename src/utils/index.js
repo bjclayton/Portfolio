@@ -8,6 +8,8 @@ import a1 from "../assets/images/a1.webp";
 import a2 from "../assets/images/a2.webp";
 import a3 from "../assets/images/a3.webp";
 import a4 from "../assets/images/a4.webp";
+import a5 from "../assets/images/a5.webp";
+
 
 export const headlines = [
     "Hi, I'm Clayton.",
@@ -103,16 +105,16 @@ export const articles = [
         image: a1
     },
     {
+        title: "How AI can inherit our biases",
+        resume: " In 2014, a prominent example occurred when Amazon developed an AI-based recruiting tool. Designed to streamline resume screening, the algorithm ended up discriminating against women. Why? Because it was trained on a dataset...",
+        url: "https://medium.com/p/e3a367a18104",
+        image: a5
+    },
+    {
         title: "Google Search vs Local PC Search",
         resume: "Have you ever experienced the frustration of waiting for your computer to cough up search results while Google effortlessly delivers them in the blink of an eye? 😩 A simple Google search yields results in a mere 0.28 seconds...",
         url: "https://medium.com/ai-mind-labs/google-search-vs-local-pc-search-902a6291e6ce",
         image: a4
-    },
-    {
-        title: "Attention Is All You Need",
-        resume: "Did you know the next best-selling author on Amazon might not be human? Language models like Transformers, BERT, GPT, and T5 are rapidly evolving, pushing the boundaries of what machines can do with language.",
-        url: "https://medium.com/ai-mind-labs/attention-is-all-you-need-ae2d216d7f17",
-        image: a3
     },
     {
         title: "The JavaScript Universe: Imperfections and Essential Insights",
