@@ -82,6 +82,7 @@ export const skillsWork = [
     'AdonisJS',
     'NodeJS',
     'PostgreSQL',
+    'Redis',
     'Docker',
     'Jest',
     'Azure',
