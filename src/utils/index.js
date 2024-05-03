@@ -6,7 +6,6 @@ import tracer from "../assets/images/tracer.png";
 import pen from "../assets/images/pen.png";
 import a1 from "../assets/images/a1.webp";
 import a2 from "../assets/images/a2.webp";
-import a3 from "../assets/images/a3.webp";
 import a4 from "../assets/images/a4.webp";
 import a5 from "../assets/images/a5.webp";
 
@@ -124,3 +123,11 @@ export const articles = [
         image: a2
     },
 ];
+
+
+export const metadata = {
+    title: "John Clayton Blanc",
+    description: "This portfolio is a collection of my work that showcases my skills and creativity.",
+    imageURL: "../assets/images/profile.webp",
+    pageUrl: "https://www.johnclaytonblanc.com"
+};

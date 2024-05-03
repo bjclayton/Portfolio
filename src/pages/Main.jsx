@@ -5,10 +5,24 @@ import Contact from "../components/sections/Contact";
 import Blog from "../components/sections/Blog";
 import Footer from "../components/sections/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { Helmet } from "react-helmet";
+import { metadata } from "../utils";
 
 const Main = () => {
     return (
         <main>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{metadata.title}</title>
+                <link rel="canonical" href={metadata.pageUrl} />
+                <meta name="description" content={metadata.description} />
+                <meta property="og:title" content={metadata.title} />
+                <meta property="og:description" content={metadata.description} />
+                <meta property="og:image" content={metadata.imageURL} />
+                <meta property="og:url" content={metadata.pageUrl} />
+                <meta property="og:type" content="website" />
+            </Helmet>
+
             <Hero />
             <About />
             <Projects />
