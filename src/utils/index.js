@@ -76,9 +76,10 @@ export const projects = [
 ];
 
 export const skillsWork = [
-    'NodeJS',
-    'Express',
+    'JavaScript & TypeScript',
     'Python',
+    'AdonisJS',
+    'NodeJS',
     'PostgreSQL',
     'Docker',
     'Unit Testing',
@@ -90,8 +91,6 @@ export const skillsWork = [
 export const skillsFun = [
     'Framer Motion',
     'P5.js',
-    'Flet',
-    'Figma',
     'WordPress',
 ];
 
