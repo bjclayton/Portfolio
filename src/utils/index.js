@@ -76,7 +76,8 @@ export const projects = [
 ];
 
 export const skillsWork = [
-    'JavaScript & TypeScript',
+    'JavaScript',
+    'TypeScript',
     'Python',
     'AdonisJS',
     'NodeJS',
@@ -84,14 +85,14 @@ export const skillsWork = [
     'Docker',
     'Unit Testing',
     'Azure',
-    'React',
-    'Tailwind CSS',
 ];
 
 export const skillsFun = [
+    'React',
+    'Tailwind CSS',
     'Framer Motion',
-    'P5.js',
     'WordPress',
+    'P5.js',
 ];
 
 export const articles = [
