@@ -42,7 +42,7 @@ const socialMediaLinks = [
         iconComponent: <FaLinkedin className="fill-white hover:fill-secondary" size={25} />
     },
     {
-        url: 'https://github.com/jcblanc2',
+        url: 'https://github.com/bjclayton',
         iconComponent: <FaGithub className="fill-white hover:fill-secondary" size={25} />
     },
     {
