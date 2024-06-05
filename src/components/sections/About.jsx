@@ -41,7 +41,7 @@ const About = () => {
                     animate={control}
                     className="flex-1 text-base">
                     <p className="pb-3">
-                        Hey there! I'm John Clayton, a Christian software developer based in Florida. I specialize in backend development, particularly using Node.js, but I'm also comfortable with various tools and adapt to project needs. I also have experience in front-end development.
+                        Hey there! I'm John Clayton, a software developer based in Florida. I specialize in backend development, particularly using Node.js and Python, but I'm also comfortable with various tools and adapt to project needs. I also have experience in front-end development.
                     </p>
 
 {/*                     <div className="pb-3">
@@ -74,7 +74,7 @@ const About = () => {
                     </div> */}
 
                     <div className="pb-3">
-                        I'm looking for new opportunities where I can merge my love for code with my love for learning to solve challenging problems. If you have an opening that you think might be a good fit, let's connect and explore the possibilities!
+                        I'm looking for new opportunities where I can merge my love for code with my love for learning to solve challenging problems. If you have an opening that might be a good fit, let's connect and explore the possibilities!
                     </div>
                 </motion.div>
 
