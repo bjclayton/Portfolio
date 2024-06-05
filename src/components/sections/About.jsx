@@ -84,10 +84,10 @@ const About = () => {
                         list={skillsWork}
                         icon={<FaCode color="#6366f1" />} />
 
-                    <StackSkills
+{/*                     <StackSkills
                         title={"Use for fun"}
                         list={skillsFun}
-                        icon={< TbBrandFunimation color="#6366f1" />} />
+                        icon={< TbBrandFunimation color="#6366f1" />} /> */}
                 </div>
             </div>
         </section>
