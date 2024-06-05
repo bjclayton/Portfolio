@@ -85,7 +85,7 @@ export const skillsWork = [
     'Redis',
     'Docker',
     'Jest',
-    'AWS'
+    'AWS',
     'Azure',
     'React',
     'Tailwind CSS',
