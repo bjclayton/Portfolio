@@ -84,14 +84,14 @@ export const skillsWork = [
     'Docker',
     'Kubernetes',
     'Jenkis',
-    'Azure',
+    'Microsoft Azure',
 ];
 
 export const certificates = [
-    'Comptia A+',
-    'GitHub Actions',
+    'CompTIA  A+',
+    'Jenkins',
     'Traefik',
-    'Jenkis',
+    'GitHub Actions',
 ];
 
 export const articles = [
