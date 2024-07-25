@@ -1,7 +1,8 @@
-import { skillsWork, skillsFun } from "../../utils";
+import { skillsWork, certificates } from "../../utils";
 import StackSkills from "../ui/StackSkills";
 import { FaCode } from "react-icons/fa6";
 import { TbBrandFunimation } from "react-icons/tb";
+import { TbCertificate } from "react-icons/tb";
 import SectionHeader from "../ui/SectionHeader";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -84,10 +85,10 @@ const About = () => {
                         list={skillsWork}
                         icon={<FaCode color="#6366f1" />} />
 
-{/*                     <StackSkills
-                        title={"Use for fun"}
-                        list={skillsFun}
-                        icon={< TbBrandFunimation color="#6366f1" />} /> */}
+                    <StackSkills
+                        title={"Certificates"}
+                        list={certificates}
+                        icon={< TbCertificate color="#6366f1" />} />
                 </div>
             </div>
         </section>
