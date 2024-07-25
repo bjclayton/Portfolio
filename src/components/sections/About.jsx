@@ -81,7 +81,7 @@ const About = () => {
 
                 <div className="flex-1 pt-4 md:pt-0">
                     <StackSkills
-                        title={"Use at work"}
+                        title={"Programming & Tools"}
                         list={skillsWork}
                         icon={<FaCode color="#6366f1" />} />
 
