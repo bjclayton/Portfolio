@@ -76,19 +76,15 @@ export const projects = [
 ];
 
 export const skillsWork = [
-    'JavaScript',
-    'TypeScript',
-    'Python',
-    'AdonisJS',
     'NodeJS',
+    'Python',
     'PostgreSQL',
+    'MySQL',
     'Redis',
     'Docker',
-    'Jest',
-    'AWS',
+    'Kubernetes',
+    'Jenkis',
     'Azure',
-    'React',
-    'Tailwind CSS',
 ];
 
 export const skillsFun = [
