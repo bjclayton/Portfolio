@@ -87,12 +87,11 @@ export const skillsWork = [
     'Azure',
 ];
 
-export const skillsFun = [
-    'React',
-    'Tailwind CSS',
-    'Framer Motion',
-    'WordPress',
-    'P5.js',
+export const certificates = [
+    'Comptia A+',
+    'GitHub Actions',
+    'Traefik',
+    'Jenkis',
 ];
 
 export const articles = [
