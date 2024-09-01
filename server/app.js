@@ -1,9 +1,8 @@
 import cors from 'cors';
 import express, { json } from 'express';
 import 'dotenv/config';
-import nodemailer from 'nodemailer';
 import { getAccessToken } from './spotify.js';
-import { Resend } from 'resend';
+import { Resend } from 'resend/dist/index.js';
 
 const app = express();
 const resend = new Resend(process.env.APIKEY);
