@@ -3,8 +3,10 @@ import express, { json } from 'express';
 import 'dotenv/config';
 import nodemailer from 'nodemailer';
 import { getAccessToken } from './spotify.js';
+import { Resend } from 'resend';
 
 const app = express();
+const resend = new Resend(process.env.APIKEY);
 
 app.use(cors({
     origin: [
@@ -14,34 +16,20 @@ app.use(cors({
 }));
 app.use(json());
 
-const transporter = nodemailer.createTransport({
-    service: "Gmail",
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-        user: process.env.MAIL_USERNAME,
-        pass: process.env.MAIL_PASSWORD,
-    },
-});
-
 
 app.use("/send-email", async (req, res) => {
     const { formData } = req.body;
 
     try {
-        let mailOptions = {
-            from: formData.email,
-            to: "jclaytonblanc@gmail.com",
-            subject: `Portfolio: ${formData.subject}`,
-            text: `Sender's Email: ${formData.email}\n\n${formData.message}`
-        };
-
-        transporter.sendMail(mailOptions, function (err, data) {
-            if (err) {
-                console.log('Error send message:', err);
-                return res.json({ message: "Internal server error!" });
-            }
+        await resend.emails.send({
+        from: `Acme <${process.env.SENDER}>`,
+        to: [process.env.RECEIVER],
+        subject: `Portfolio - ${formData.subject}`,
+        html: `<div>
+                <h2><Sender's Email: ${formData.email}</h2> 
+                <br> 
+                <p>${formData.message}</p>
+              </div>`,
         });
 
         res.json({ message: "Message sent successfully." });
