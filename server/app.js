@@ -12,7 +12,6 @@ app.use(
         origin: [
             "https://www.johnclaytonblanc.com",
             "https://johnclayton.vercel.app",
-            "http://localhost:5173"
         ],
     })
 );
