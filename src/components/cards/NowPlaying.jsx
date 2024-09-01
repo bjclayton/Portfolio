@@ -49,8 +49,8 @@ const NowPlaying = () => {
         title = 'I am'
         artist = 'currently Offline'
     } else {
-        title = 'Failed to'
-        artist = 'fetch song'
+        title = 'I am'
+        artist = 'currently Offline'
     }
 
     const pad = (n) => {

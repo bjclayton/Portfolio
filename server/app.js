@@ -1,44 +1,44 @@
-import cors from 'cors';
-import express, { json } from 'express';
-import 'dotenv/config';
-import { getAccessToken } from './spotify.js';
-import { Resend } from 'resend/dist/index.js';
+import cors from "cors";
+import express, { json } from "express";
+import "dotenv/config";
+import { getAccessToken } from "./spotify.js";
+import { Resend } from "resend";
 
 const app = express();
 const resend = new Resend(process.env.APIKEY);
 
-app.use(cors({
-    origin: [
-        "https://www.johnclaytonblanc.com",
-        "https://johnclayton.vercel.app"
-    ]
-}));
+app.use(
+    cors({
+        origin: [
+            "https://www.johnclaytonblanc.com",
+            "https://johnclayton.vercel.app",
+            "http://localhost:5173"
+        ],
+    })
+);
 app.use(json());
-
 
 app.use("/send-email", async (req, res) => {
     const { formData } = req.body;
 
     try {
         await resend.emails.send({
-        from: `Acme <${process.env.SENDER}>`,
-        to: [process.env.RECEIVER],
-        subject: `Portfolio - ${formData.subject}`,
-        html: `<div>
+            from: `Acme <${process.env.SENDER}>`,
+            to: [process.env.RECEIVER],
+            subject: `Portfolio - ${formData.subject}`,
+            html: `<div>
                 <h2><Sender's Email: ${formData.email}</h2> 
                 <br> 
                 <p>${formData.message}</p>
-              </div>`,
+            </div>`,
         });
 
         res.json({ message: "Message sent successfully." });
-
     } catch (error) {
-        console.error('Error send message:', error);
+        console.error("Error send message:", error);
         res.status(500).json({ message: "Internal server error!" });
     }
 });
-
 
 app.use("/generate-token", async (req, res) => {
     try {
@@ -56,17 +56,17 @@ app.use("/generate-token", async (req, res) => {
 
         if (response.status > 400) {
             return res.status(500).json({
-                response: { message: "Unable to Fetch Song", code: 500 }
+                response: { message: "Unable to Fetch Song", code: 500 },
             });
         } else if (response.status === 204) {
             return res.status(500).json({
-                response: { message: "Currently Not Playing", code: 204 }
+                response: { message: "Currently Not Playing", code: 204 },
             });
         }
 
         const song = await response.json();
         const albumImageUrl = song.item.album.images[0].url;
-        const artist = song.item.artists.map((artist) => artist.name).join(', ');
+        const artist = song.item.artists.map((artist) => artist.name).join(", ");
         const isPlaying = song.is_playing;
         const songUrl = song.item.external_urls.spotify;
         const title = song.item.name;
@@ -83,19 +83,17 @@ app.use("/generate-token", async (req, res) => {
             timePlayed: timePlayed,
             timeTotal: timeTotal,
             artistUrl: artistUrl,
-            code: 200
+            code: 200,
         };
 
         res.status(200).json({ response: responseData });
-
     } catch (error) {
-        console.log('Error fetching currently playing song');
+        console.log("Error fetching currently playing song");
         res.status(500).json({
-            response: { message: "Internal server error!", code: 500 }
+            response: { message: "Internal server error!", code: 500 },
         });
     }
 });
-
 
 app.listen(5000, () => {
     console.log("http://localhost:5000");
