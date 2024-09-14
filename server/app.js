@@ -26,7 +26,7 @@ app.use("/send-email", async (req, res) => {
             to: [process.env.RECEIVER],
             subject: `Portfolio - ${formData.subject}`,
             html: `<div>
-                <h2><Sender's Email: ${formData.email}</h2> 
+                <h2>Sender's Email: ${formData.email}</h2> 
                 <br> 
                 <p>${formData.message}</p>
             </div>`,
