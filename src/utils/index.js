@@ -84,7 +84,7 @@ export const skillsWork = [
     'Docker',
     'Kubernetes',
     'Jenkis',
-    'Microsoft Azure',
+    'AWS',
 ];
 
 export const certificates = [
