@@ -76,6 +76,7 @@ export const projects = [
 ];
 
 export const skillsWork = [
+    'Golang',
     'NodeJS',
     'Python',
     'PostgreSQL',
