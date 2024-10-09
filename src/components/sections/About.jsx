@@ -42,7 +42,7 @@ const About = () => {
                     animate={control}
                     className="flex-1 text-base">
                     <p className="pb-3">
-                        Hey there! I'm John Clayton, a software developer based in Florida. I specialize in backend development, particularly using Node.js and Python, but I'm also comfortable with various tools and adapt to project needs. I also have experience in front-end development.
+                        Hey there! I'm John Clayton, a software developer based in Florida. I specialize in backend development, particularly using Golang, Node.js, and Python, but I'm also comfortable with various tools and adapt to project needs. I also have experience in front-end development.
                     </p>
 
 {/*                     <div className="pb-3">
