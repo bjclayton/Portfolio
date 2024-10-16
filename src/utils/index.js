@@ -84,7 +84,7 @@ export const skillsWork = [
     'Redis',
     'Docker',
     'Kubernetes',
-    'Jenkis',
+    'jenkins',
     'AWS',
 ];
 
