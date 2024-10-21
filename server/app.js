@@ -26,7 +26,7 @@ app.use("/send-email", async (req, res) => {
         if (error) return res.status(400).json({ message: error.details[0].message });
 
         const isNotValid = await isNotValidEmail(formData.email)
-        if (isNotValid) return res.status(400).json({ message: "Invalid address email!"});
+        if (isNotValid) return res.status(400).json({ message: "Please enter a valid email address."});
 
         await resend.emails.send({
             from: `Acme <${process.env.SENDER}>`,

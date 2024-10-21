@@ -13,14 +13,14 @@ export const emailValidation = (data) => {
             .messages({
                 'string.empty': 'Subject cannot be empty.',
                 'string.min': 'Subject must be at least 2 characters long.',
-                'string.max': 'Subject must be at most 50 characters long.',
+                'string.max': 'Subject must not exceed 50 characters.',
                 'any.required': 'Subject is required.'
             }),
         message: Joi.string().min(2).max(250).required()
             .messages({
                 'string.empty': 'Message cannot be empty.',
                 'string.min': 'Message must be at least 2 characters long.',
-                'string.max': 'Message must be at most 250 characters long.',
+                'string.max': 'Message must not exceed 250 characters.',
                 'any.required': 'Message is required.'
             }),
     });
