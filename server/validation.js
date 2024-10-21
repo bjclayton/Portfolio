@@ -3,9 +3,26 @@ import 'dotenv/config.js';
 
 export const emailValidation = (data) => {
     const schema = Joi.object({
-        email: Joi.string().email().required(),
-        subject: Joi.string().min(2).max(50).required(),
-        message: Joi.string().min(2).max(250).required(),
+        email: Joi.string().email().required()
+            .messages({
+                'string.empty': 'Email cannot be empty.',
+                'string.email': 'Please enter a valid email address.',
+                'any.required': 'Email is required.'
+            }),
+        subject: Joi.string().min(2).max(50).required()
+            .messages({
+                'string.empty': 'Subject cannot be empty.',
+                'string.min': 'Subject must be at least 2 characters long.',
+                'string.max': 'Subject must be at most 50 characters long.',
+                'any.required': 'Subject is required.'
+            }),
+        message: Joi.string().min(2).max(250).required()
+            .messages({
+                'string.empty': 'Message cannot be empty.',
+                'string.min': 'Message must be at least 2 characters long.',
+                'string.max': 'Message must be at most 250 characters long.',
+                'any.required': 'Message is required.'
+            }),
     });
 
     return schema.validate(data);

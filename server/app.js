@@ -23,10 +23,10 @@ app.use("/send-email", async (req, res) => {
 
     try {
         const { error } = emailValidation(formData);
-        if (error) return res.status(400).send({ message: error.details[0].message });
+        if (error) return res.status(400).json({ message: error.details[0].message });
 
         const isNotValid = await isNotValidEmail(formData.email)
-        if (isNotValid) return res.status(400).send({ message: "Invalid address email!"});
+        if (isNotValid) return res.status(400).json({ message: "Invalid address email!"});
 
         await resend.emails.send({
             from: `Acme <${process.env.SENDER}>`,
@@ -39,7 +39,7 @@ app.use("/send-email", async (req, res) => {
             </div>`,
         });
 
-        res.json({ message: "Message sent successfully." });
+        res.status(200).json({ message: "Message sent successfully." });
     } catch (error) {
         console.error("Error send message:", error);
         res.status(500).json({ message: "Internal server error!" });

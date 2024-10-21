@@ -54,7 +54,10 @@ const Contact = () => {
         const response = await sendEmail(formData);
 
         setAlert(response);
-        setFormData({ email: '', subject: '', message: '' });
+
+        if (response.ok) {
+            setFormData({email: '', subject: '', message: ''});
+        }
 
         setTimeout(() => {
             setAlert('');
@@ -73,7 +76,7 @@ const Contact = () => {
                     className="grid md:grid-cols-2 px-5 md:px-0">
                     <div className="pr-6">
                         <p className="mt-3 mb-12 text-base text-secondary-text text-center md:text-left">
-                            I'd be happy to connect! Feel free to reach out for project inquiries, collaboration opportunities, or any other questions you may have.
+                            I&apos;d be happy to connect! Feel free to reach out for project inquiries, collaboration opportunities, or any other questions you may have.
                         </p>
 
                         <ul className="mb-6 md:mb-0">
