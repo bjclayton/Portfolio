@@ -4,9 +4,18 @@ import "dotenv/config";
 import { getAccessToken } from "./spotify.js";
 import { Resend } from "resend";
 import {emailValidation, isNotValidEmail} from "./validation.js";
+import rateLimit from "express-rate-limit";
 
 const app = express();
 const resend = new Resend(process.env.APIKEY);
+
+const emailRateLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000,
+    max: 5,
+    message: "Too many emails sent from this IP, please try again after an hour.",
+    standardHeaders: true,
+    legacyHeaders: false,
+});
 
 app.use(
     cors({
@@ -18,7 +27,7 @@ app.use(
 );
 app.use(json());
 
-app.use("/send-email", async (req, res) => {
+app.use("/send-email", emailRateLimiter, async (req, res) => {
     const { formData } = req.body;
 
     try {
