@@ -3,6 +3,7 @@ import express, { json } from "express";
 import "dotenv/config";
 import { getAccessToken } from "./spotify.js";
 import { Resend } from "resend";
+import {emailValidation, isNotValidEmail} from "./validation.js";
 
 const app = express();
 const resend = new Resend(process.env.APIKEY);
@@ -21,6 +22,12 @@ app.use("/send-email", async (req, res) => {
     const { formData } = req.body;
 
     try {
+        const { error } = emailValidation(formData);
+        if (error) return res.status(400).send({ message: error.details[0].message });
+
+        const isNotValid = await isNotValidEmail(formData.email)
+        if (isNotValid) return res.status(400).send({ message: "Invalid address email!"});
+
         await resend.emails.send({
             from: `Acme <${process.env.SENDER}>`,
             to: [process.env.RECEIVER],
