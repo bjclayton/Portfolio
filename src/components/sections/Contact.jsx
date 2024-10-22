@@ -52,8 +52,9 @@ const Contact = () => {
         }
 
         const response = await sendEmail(formData);
+        const responseData = await response.json(); 
 
-        setAlert(response);
+        setAlert(responseData.message);
 
         if (response.ok) {
             setFormData({email: '', subject: '', message: ''});

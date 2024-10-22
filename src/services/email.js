@@ -9,7 +9,7 @@ export const sendEmail = async (formData) => {
         });
 
         const responseData = await response.json();
-        return responseData.message;
+        return responseData;
     } catch (error) {
         console.error('Error sending message:', error.message);
     }
