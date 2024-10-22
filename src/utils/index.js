@@ -128,6 +128,6 @@ export const articles = [
 export const metadata = {
     title: "John Clayton Blanc",
     description: "This portfolio is a collection of my work that showcases my skills and creativity.",
-    imageURL: "../assets/images/profile.webp",
+    imageURL: "https://avatars.githubusercontent.com/u/108766949?s=400&u=1671b3dfc6d09709a394c94b1566e56e6e3e16cd&v=4",
     pageUrl: "https://www.johnclaytonblanc.com"
 };

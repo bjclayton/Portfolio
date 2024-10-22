@@ -21,6 +21,12 @@ const Main = () => {
                 <meta property="og:image" content={metadata.imageURL} />
                 <meta property="og:url" content={metadata.pageUrl} />
                 <meta property="og:type" content="website" />
+                <meta property="og:site_name" content={metadata.title}  />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={metadata.title} />
+                <meta name="twitter:description" content={metadata.description} />
+                <meta name="twitter:image" content={metadata.imageURL} />
             </Helmet>
 
             <Hero />
