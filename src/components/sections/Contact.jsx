@@ -52,7 +52,7 @@ const Contact = () => {
         }
 
         const response = await sendEmail(formData);
-        const responseData = await response.json(); 
+        const responseData = await response.json();
 
         setAlert(responseData.message);
 

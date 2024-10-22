@@ -8,8 +8,7 @@ export const sendEmail = async (formData) => {
             body: JSON.stringify({ formData: formData })
         });
 
-        const responseData = await response.json();
-        return responseData;
+        return response;
     } catch (error) {
         console.error('Error sending message:', error.message);
     }
