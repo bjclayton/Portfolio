@@ -1,6 +1,6 @@
 export const sendEmail = async (formData) => {
     try {
-        const response = await fetch('https://portfolioapi-2a97.onrender.com/send-email', {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/send-email`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
