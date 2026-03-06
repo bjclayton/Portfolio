@@ -1,6 +1,6 @@
 export const getNowPlaying = async () => {
     try {
-        const response = await fetch('https://portfolioapi-2a97.onrender.com/generate-token');
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/generate-token`);
 
         const responseData = await response.json();
 
