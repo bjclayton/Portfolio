@@ -88,10 +88,9 @@ export const skillsWork = [
 ];
 
 export const certificates = [
-    'CompTIA Security+',
+    'CompTIA Sec+',
     'AWS Cloud Practitioner',
     'Google IT Support',
-    'CodePath Software Development',
     'Traefik'
 ];
 
