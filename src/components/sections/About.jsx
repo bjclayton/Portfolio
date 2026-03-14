@@ -42,7 +42,7 @@ const About = () => {
                     animate={control}
                     className="flex-1 text-base">
                     <p className="pb-3">
-                        Hey there! I'm John Clayton, a software developer based in Florida. I specialize in backend development, particularly using Golang, Node.js, and Python, but I'm also comfortable with various tools and adapt to project needs. I also have experience in frontend development.
+                        Hey there! I'm John Clayton, a software engineer based in Orlando, Florida. I specialize in backend development and cloud infrastructure using Node.js, Python, and Java, and I'm comfortable across the full stack when the project calls for it.
                     </p>
 
 {/*                     <div className="pb-3">
@@ -75,7 +75,7 @@ const About = () => {
                     </div> */}
 
                     <div className="pb-3">
-                        I'm looking for new opportunities where I can merge my love for code with my love for learning to solve challenging problems. If you have an opening that might be a good fit, let's connect and explore the possibilities!
+                        I'm currently pursuing my B.S. in Computer Science while actively looking for opportunities in software engineering and technical support. I enjoy solving complex problems, whether that's debugging a distributed system, optimizing a slow query, or troubleshooting network-layer issues.
                     </div>
                 </motion.div>
 
