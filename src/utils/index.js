@@ -76,24 +76,23 @@ export const projects = [
 ];
 
 export const skillsWork = [
-    'Go',
     'Java',
     'NodeJS',
     'Python',
     'PostgreSQL',
     'MySQL',
     'Redis',
-    'Docker',
-    'Kubernetes',
-    'Jenkins',
     'AWS',
+    'Docker',
+    'Kubernetes'
 ];
 
 export const certificates = [
-    'CompTIA  A+',
-    'Jenkins',
-    'Traefik',
-    'GitHub Actions',
+    'CompTIA Security+',
+    'AWS Cloud Practitioner',
+    'Google IT Support',
+    'CodePath Software Development',
+    'Traefik'
 ];
 
 export const articles = [
