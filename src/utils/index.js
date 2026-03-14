@@ -12,8 +12,8 @@ import a5 from "../assets/images/a5.webp";
 
 export const headlines = [
     "Hi, I'm Clayton.",
-    "I'm a Software Developer",
-    "Over the past few years, I've immersed myself in building and scaling backend software while actively tackling frontend challenges."
+    "I'm a Software Engineer",
+    "I build backend systems, cloud infrastructure, and full-stack applications, with a focus on reliability, performance, and clean architecture."
 ];
 
 export const fixedNavItems = [
