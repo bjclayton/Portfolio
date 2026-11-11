@@ -3,7 +3,7 @@ import express, { json } from "express";
 import "dotenv/config";
 import { getAccessToken } from "./spotify.js";
 import { Resend } from "resend";
-import {emailValidation, isNotValidEmail} from "./validation.js";
+import { emailValidation, verifyContactEmail } from "./validation.js";
 
 const app = express();
 const resend = new Resend(process.env.APIKEY);
@@ -19,22 +19,30 @@ app.use(
 app.use(json());
 
 app.use("/send-email", async (req, res) => {
-    const { formData } = req.body;
-
     try {
-        const { error } = emailValidation(formData);
+        const { error, value: formData } = emailValidation(req.body?.formData);
         if (error) return res.status(400).json({ message: error.details[0].message });
 
-        const isNotValid = await isNotValidEmail(formData.email)
-        if (isNotValid) return res.status(400).json({ message: "Please enter a valid email address."});
+        const verification = await verifyContactEmail(formData.email);
+        if (verification === "invalid") {
+            return res.status(400).json({ message: "Please enter a valid email address." });
+        }
+        if (verification === "disposable") {
+            return res.status(400).json({ message: "Please use a permanent email address." });
+        }
+        if (verification === "unavailable") {
+            return res.status(503).json({
+                message: "Email verification is temporarily unavailable. Please try again shortly.",
+            });
+        }
 
         await resend.emails.send({
             from: `Acme <${process.env.SENDER}>`,
             to: [process.env.RECEIVER],
             subject: `Portfolio - ${formData.subject}`,
             html: `<div>
-                <h4>Sender's Email: ${formData.email}</h4> 
-                <br> 
+                <h4>Sender's Email: ${formData.email}</h4>
+                <br>
                 <p>${formData.message}</p>
             </div>`,
         });
